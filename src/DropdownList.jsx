@@ -78,7 +78,8 @@ var DropdownList = createReactClass({
     require('./mixins/AriaDescendantMixin')(),
     require('./mixins/FocusMixin')({
       didHandle(focused) {
-        if (!focused) this.close()
+        if (!focused) this.close();
+        if (focused && !this.props.open) this.open();
       }
     })
   ],
@@ -267,7 +268,7 @@ var DropdownList = createReactClass({
     this.close()
     notify(this.props.onSelect, data)
     this.change(data)
-    this.focus(this)
+    // this.focus(this)
   },
 
   @widgetEditable
@@ -278,7 +279,10 @@ var DropdownList = createReactClass({
       this.toggle()
 
     else if( !contains(compat.findDOMNode(wrapper), e.target))
-      this.close()
+    {
+      if (!this.props.open)
+        this.close();
+    }
 
     notify(this.props.onClick, e)
   },
