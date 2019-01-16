@@ -172,6 +172,7 @@ var SelectList = createReactClass({
       >
         <List
           {...listProps}
+          fullHeight={true}
           ref='list'
           role="radiogroup"
           tabIndex={tabIndex || '0'}

@@ -121,7 +121,7 @@ export default createReactClass({
         id={id}
         tabIndex='-1'
         className={cn(className, 'rw-list')}
-        style={{ maxHeight: '100% !important' }}
+        style={{ maxHeight: this.props.fullHeight ? '100% !important' : undefined }}
         role={role === undefined ? 'listbox' : role}
         {...elementProps}
       >
