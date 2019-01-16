@@ -155,6 +155,7 @@ var SelectList = createReactClass({
     return (
       <Widget
         {...elementProps}
+        style={{ maxHeight: '100% !important' }}
         onBlur={this.handleBlur}
         onFocus={this.handleFocus}
         onKeyDown={this.handleKeyDown}
