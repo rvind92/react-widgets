@@ -25,6 +25,7 @@ let { find } = _;
 
 let propTypes = {
 
+    id:             PropTypes.string,
     data:           PropTypes.array,
     value:          PropTypes.oneOfType([
                       PropTypes.any,
@@ -176,7 +177,7 @@ var SelectList = createReactClass({
           ref='list'
           role="radiogroup"
           tabIndex={tabIndex || '0'}
-          id={instanceId(this, '_listbox')}
+          id={this.props.id/*instanceId(this, '_listbox')*/}
           data={items}
           focused={focusedItem}
           optionComponent={ListItem}
